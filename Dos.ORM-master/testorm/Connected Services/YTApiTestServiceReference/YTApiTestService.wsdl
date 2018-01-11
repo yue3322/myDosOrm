@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="YTApiTestService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://180.167.29.27/WCF/YTApiTestService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://180.167.29.27/WCF/YTApiTestService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IYTApiTestService_CUSWEB_RSK_RESULT_REL_InputMessage">
+    <wsdl:part name="parameters" element="tns:CUSWEB_RSK_RESULT_REL" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_CUSWEB_RSK_RESULT_REL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CUSWEB_RSK_RESULT_RELResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_CUSWEB_RSK_RESULT_YSGK_InputMessage">
+    <wsdl:part name="parameters" element="tns:CUSWEB_RSK_RESULT_YSGK" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_CUSWEB_RSK_RESULT_YSGK_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CUSWEB_RSK_RESULT_YSGKResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_CUSWEB_REL_PASS_InputMessage">
+    <wsdl:part name="parameters" element="tns:CUSWEB_REL_PASS" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_CUSWEB_REL_PASS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CUSWEB_REL_PASSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_ODISRC_CNCP01_InputMessage">
+    <wsdl:part name="parameters" element="tns:ODISRC_CNCP01" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_ODISRC_CNCP01_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ODISRC_CNCP01Response" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_CUSWEB_H2000RTAX_InputMessage">
+    <wsdl:part name="parameters" element="tns:CUSWEB_H2000RTAX" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_CUSWEB_H2000RTAX_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CUSWEB_H2000RTAXResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_CUSWEB_POSTRTAX_InputMessage">
+    <wsdl:part name="parameters" element="tns:CUSWEB_POSTRTAX" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_CUSWEB_POSTRTAX_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CUSWEB_POSTRTAXResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_ODISRC_COSTRP_InputMessage">
+    <wsdl:part name="parameters" element="tns:ODISRC_COSTRP" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_ODISRC_COSTRP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ODISRC_COSTRPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_QueryData_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryData" />
+  </wsdl:message>
+  <wsdl:message name="IYTApiTestService_QueryData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IYTApiTestService">
+    <wsdl:operation name="CUSWEB_RSK_RESULT_REL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYTApiTestService/CUSWEB_RSK_RESULT_REL" message="tns:IYTApiTestService_CUSWEB_RSK_RESULT_REL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYTApiTestService/CUSWEB_RSK_RESULT_RELResponse" message="tns:IYTApiTestService_CUSWEB_RSK_RESULT_REL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CUSWEB_RSK_RESULT_YSGK">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYTApiTestService/CUSWEB_RSK_RESULT_YSGK" message="tns:IYTApiTestService_CUSWEB_RSK_RESULT_YSGK_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYTApiTestService/CUSWEB_RSK_RESULT_YSGKResponse" message="tns:IYTApiTestService_CUSWEB_RSK_RESULT_YSGK_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CUSWEB_REL_PASS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYTApiTestService/CUSWEB_REL_PASS" message="tns:IYTApiTestService_CUSWEB_REL_PASS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYTApiTestService/CUSWEB_REL_PASSResponse" message="tns:IYTApiTestService_CUSWEB_REL_PASS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ODISRC_CNCP01">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYTApiTestService/ODISRC_CNCP01" message="tns:IYTApiTestService_ODISRC_CNCP01_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYTApiTestService/ODISRC_CNCP01Response" message="tns:IYTApiTestService_ODISRC_CNCP01_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CUSWEB_H2000RTAX">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYTApiTestService/CUSWEB_H2000RTAX" message="tns:IYTApiTestService_CUSWEB_H2000RTAX_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYTApiTestService/CUSWEB_H2000RTAXResponse" message="tns:IYTApiTestService_CUSWEB_H2000RTAX_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CUSWEB_POSTRTAX">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYTApiTestService/CUSWEB_POSTRTAX" message="tns:IYTApiTestService_CUSWEB_POSTRTAX_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYTApiTestService/CUSWEB_POSTRTAXResponse" message="tns:IYTApiTestService_CUSWEB_POSTRTAX_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ODISRC_COSTRP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYTApiTestService/ODISRC_COSTRP" message="tns:IYTApiTestService_ODISRC_COSTRP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYTApiTestService/ODISRC_COSTRPResponse" message="tns:IYTApiTestService_ODISRC_COSTRP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYTApiTestService/QueryData" message="tns:IYTApiTestService_QueryData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYTApiTestService/QueryDataResponse" message="tns:IYTApiTestService_QueryData_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IYTApiTestService" type="tns:IYTApiTestService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CUSWEB_RSK_RESULT_REL">
+      <soap:operation soapAction="http://tempuri.org/IYTApiTestService/CUSWEB_RSK_RESULT_REL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CUSWEB_RSK_RESULT_YSGK">
+      <soap:operation soapAction="http://tempuri.org/IYTApiTestService/CUSWEB_RSK_RESULT_YSGK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CUSWEB_REL_PASS">
+      <soap:operation soapAction="http://tempuri.org/IYTApiTestService/CUSWEB_REL_PASS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ODISRC_CNCP01">
+      <soap:operation soapAction="http://tempuri.org/IYTApiTestService/ODISRC_CNCP01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CUSWEB_H2000RTAX">
+      <soap:operation soapAction="http://tempuri.org/IYTApiTestService/CUSWEB_H2000RTAX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CUSWEB_POSTRTAX">
+      <soap:operation soapAction="http://tempuri.org/IYTApiTestService/CUSWEB_POSTRTAX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ODISRC_COSTRP">
+      <soap:operation soapAction="http://tempuri.org/IYTApiTestService/ODISRC_COSTRP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryData">
+      <soap:operation soapAction="http://tempuri.org/IYTApiTestService/QueryData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="YTApiTestService">
+    <wsdl:port name="BasicHttpBinding_IYTApiTestService" binding="tns:BasicHttpBinding_IYTApiTestService">
+      <soap:address location="http://180.167.29.27/WCF/YTApiTestService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

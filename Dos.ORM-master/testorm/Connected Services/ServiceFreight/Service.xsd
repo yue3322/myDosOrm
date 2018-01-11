@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://180.167.29.26/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://180.167.29.26/Service.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/Message" />
+  <xs:element name="GetYtServerData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="in0" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="in1" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in2" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in3" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetYtServerDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetYtServerDataResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewGetYtServerData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="in0" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="in1" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in2" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in3" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in4" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in5" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in6" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in7" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewGetYtServerDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NewGetYtServerDataResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VilidateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="in0" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="in1" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in2" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VilidateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VilidateUserResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMenuDll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="in0" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="in1" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in2" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMenuDllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMenuDllResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMenuDllFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="in0" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="in1" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in2" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMenuDllFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMenuDllFileResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BookingInfoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BookingInfoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BookingInfoListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BlcInfoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BlcInfoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BlcInfoListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadAndUnloadPortInfoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UlpContainer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadAndUnloadPortInfoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoadAndUnloadPortInfoListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CleanManifestInfoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CleanManifestInfoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CleanManifestInfoListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EdiLetPassInfoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UlpContainer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="entryid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EdiLetPassInfoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EdiLetPassInfoListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CstVslInfoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UlpContainer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CstVslInfoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CstVslInfoListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CodecoInfoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jobno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UlpContainer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CodecoInfoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodecoInfoListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PremanifestInfoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PremanifestInfoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PremanifestInfoListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllowData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UsoEtdDtFrom" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="UsoEtdDtTo" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllowDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getAllowDataResult" nillable="true" type="q1:ArrayOfArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEmbarkData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UsoEtdDtFrom" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="UsoEtdDtTo" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEmbarkDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getEmbarkDataResult" nillable="true" type="q2:ArrayOfArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BookingInfoOriginalList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BookingInfoOriginalListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BookingInfoOriginalListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BlcInfoOriginalList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BlcInfoOriginalListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BlcInfoOriginalListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadAndUnloadPortInfoOriginalList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UlpContainer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadAndUnloadPortInfoOriginalListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoadAndUnloadPortInfoOriginalListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CleanManifestInfoOriginalList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CleanManifestInfoOriginalListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CleanManifestInfoOriginalListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EdiLetPassInfoOriginalList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UlpContainer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="entryid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EdiLetPassInfoOriginalListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EdiLetPassInfoOriginalListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CstVslInfoOriginalList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UlpContainer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CstVslInfoOriginalListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CstVslInfoOriginalListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CodecoInfoOriginalList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jobno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UlpContainer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CodecoInfoOriginalListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodecoInfoOriginalListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PremanifestInfoOriginalList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PremanifestInfoOriginalListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PremanifestInfoOriginalListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FileWrapper">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/Message" name="in4" type="q3:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="in0" nillable="true" type="xs:string" />
+  <xs:element name="in1" nillable="true" type="xs:base64Binary" />
+  <xs:element name="in2" nillable="true" type="xs:base64Binary" />
+  <xs:element name="in3" nillable="true" type="xs:string" />
+  <xs:element name="result">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="returnresult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="in0" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="in1" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in2" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="filename" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/Message" name="DownloadFileResult" type="q4:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownLoadPhysicalApplicationPathFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="in0" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="in1" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in2" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="filename" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownLoadPhysicalApplicationPathFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/Message" name="DownLoadPhysicalApplicationPathFileResult" type="q5:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="in0" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="in1" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in2" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in3" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetFileListResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="in0" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="in1" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in2" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in3" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetFileInfoResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FreeApply">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="in0" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="in1" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in2" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="in3" nillable="true" type="q6:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FreeApplyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FreeApplyResult" nillable="true" type="q7:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="in0" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="in1" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in2" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="in3" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ChangePasswordResult" nillable="true" type="q8:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPremanifestInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPremanifestInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getPremanifestInfoResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCodecoInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ctnno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCodecoInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCodecoInfoResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCstVslInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ctnno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCstVslInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCstVslInfoResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEdiLetPassInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ctnno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="entryid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEdiLetPassInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getEdiLetPassInfoResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCleanManifestInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCleanManifestInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCleanManifestInfoResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLoadAndUnloadPortInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ctnno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLoadAndUnloadPortInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getLoadAndUnloadPortInfoResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBlcInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bookingNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBlcInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getBlcInfoResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBookingInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vessel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voyage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bookingNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBookingInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getBookingInfoResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

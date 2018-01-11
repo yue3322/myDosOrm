@@ -1,0 +1,47 @@
+﻿@model System.Data.DataTable
+@{
+    Layout = null;
+}
+
+
+<table cellspacing="0" cellpadding="0" border="0" class="el-table__header">
+    <thead>
+        <tr class="datagrid-header" id="">
+            <th>类型</th>
+            <th>表名</th>
+            <th>操作人</th>
+            <th>时间</th>
+            <th>何处操作</th>
+            <th>报关单id</th>
+            <th>子表id</th>
+            @*@foreach (System.Data.DataColumn obj in Model.Columns)
+            {
+                <td>
+                    @obj.Caption
+                </td>
+            }*@
+        </tr>
+    </thead>
+    <tbody class="datagrid-body">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        @*@foreach (System.Data.DataRow obj in Model.Rows)
+        {
+            <tr>
+                @foreach (System.Data.DataColumn obj2 in Model.Columns)
+                {
+                    <td>
+                        @obj[obj2.Caption].ToString()
+                    </td>
+                }
+            </tr>*@
+        }
+    </tbody>
+
+</table>
+

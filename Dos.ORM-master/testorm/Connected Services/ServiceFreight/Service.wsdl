@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://180.167.29.26/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://180.167.29.26/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://180.167.29.26/Service.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://180.167.29.26/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://180.167.29.26/Service.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_GetYtServerData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetYtServerData" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetYtServerData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetYtServerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_NewGetYtServerData_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewGetYtServerData" />
+  </wsdl:message>
+  <wsdl:message name="IService_NewGetYtServerData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewGetYtServerDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_VilidateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:VilidateUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_VilidateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VilidateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMenuDll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuDll" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMenuDll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuDllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMenuDllFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuDllFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMenuDllFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuDllFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BookingInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:BookingInfoList" />
+  </wsdl:message>
+  <wsdl:message name="IService_BookingInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BookingInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BlcInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:BlcInfoList" />
+  </wsdl:message>
+  <wsdl:message name="IService_BlcInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BlcInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoadAndUnloadPortInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAndUnloadPortInfoList" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoadAndUnloadPortInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAndUnloadPortInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CleanManifestInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CleanManifestInfoList" />
+  </wsdl:message>
+  <wsdl:message name="IService_CleanManifestInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CleanManifestInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EdiLetPassInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:EdiLetPassInfoList" />
+  </wsdl:message>
+  <wsdl:message name="IService_EdiLetPassInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EdiLetPassInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CstVslInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CstVslInfoList" />
+  </wsdl:message>
+  <wsdl:message name="IService_CstVslInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CstVslInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CodecoInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CodecoInfoList" />
+  </wsdl:message>
+  <wsdl:message name="IService_CodecoInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CodecoInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PremanifestInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PremanifestInfoList" />
+  </wsdl:message>
+  <wsdl:message name="IService_PremanifestInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PremanifestInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAllowData_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllowData" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAllowData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllowDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEmbarkData_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmbarkData" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEmbarkData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmbarkDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BookingInfoOriginalList_InputMessage">
+    <wsdl:part name="parameters" element="tns:BookingInfoOriginalList" />
+  </wsdl:message>
+  <wsdl:message name="IService_BookingInfoOriginalList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BookingInfoOriginalListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BlcInfoOriginalList_InputMessage">
+    <wsdl:part name="parameters" element="tns:BlcInfoOriginalList" />
+  </wsdl:message>
+  <wsdl:message name="IService_BlcInfoOriginalList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BlcInfoOriginalListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoadAndUnloadPortInfoOriginalList_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAndUnloadPortInfoOriginalList" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoadAndUnloadPortInfoOriginalList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAndUnloadPortInfoOriginalListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CleanManifestInfoOriginalList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CleanManifestInfoOriginalList" />
+  </wsdl:message>
+  <wsdl:message name="IService_CleanManifestInfoOriginalList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CleanManifestInfoOriginalListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EdiLetPassInfoOriginalList_InputMessage">
+    <wsdl:part name="parameters" element="tns:EdiLetPassInfoOriginalList" />
+  </wsdl:message>
+  <wsdl:message name="IService_EdiLetPassInfoOriginalList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EdiLetPassInfoOriginalListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CstVslInfoOriginalList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CstVslInfoOriginalList" />
+  </wsdl:message>
+  <wsdl:message name="IService_CstVslInfoOriginalList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CstVslInfoOriginalListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CodecoInfoOriginalList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CodecoInfoOriginalList" />
+  </wsdl:message>
+  <wsdl:message name="IService_CodecoInfoOriginalList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CodecoInfoOriginalListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PremanifestInfoOriginalList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PremanifestInfoOriginalList" />
+  </wsdl:message>
+  <wsdl:message name="IService_PremanifestInfoOriginalList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PremanifestInfoOriginalListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FileWrapper">
+    <wsdl:part name="parameters" element="tns:FileWrapper" />
+  </wsdl:message>
+  <wsdl:message name="FileWrapper_Headers">
+    <wsdl:part name="in0" element="tns:in0" />
+    <wsdl:part name="in1" element="tns:in1" />
+    <wsdl:part name="in2" element="tns:in2" />
+    <wsdl:part name="in3" element="tns:in3" />
+  </wsdl:message>
+  <wsdl:message name="result">
+    <wsdl:part name="parameters" element="tns:result" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownLoadPhysicalApplicationPathFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownLoadPhysicalApplicationPathFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownLoadPhysicalApplicationPathFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownLoadPhysicalApplicationPathFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetFileList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileList" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetFileList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetFileInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetFileInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FreeApply_InputMessage">
+    <wsdl:part name="parameters" element="tns:FreeApply" />
+  </wsdl:message>
+  <wsdl:message name="IService_FreeApply_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FreeApplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IService_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getPremanifestInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPremanifestInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_getPremanifestInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPremanifestInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCodecoInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCodecoInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCodecoInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCodecoInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCstVslInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCstVslInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCstVslInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCstVslInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEdiLetPassInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEdiLetPassInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_getEdiLetPassInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEdiLetPassInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCleanManifestInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCleanManifestInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCleanManifestInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCleanManifestInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getLoadAndUnloadPortInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getLoadAndUnloadPortInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_getLoadAndUnloadPortInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getLoadAndUnloadPortInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBlcInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBlcInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBlcInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBlcInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBookingInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBookingInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBookingInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBookingInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="GetYtServerData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetYtServerData" message="tns:IService_GetYtServerData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetYtServerDataResponse" message="tns:IService_GetYtServerData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewGetYtServerData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/NewGetYtServerData" message="tns:IService_NewGetYtServerData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/NewGetYtServerDataResponse" message="tns:IService_NewGetYtServerData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VilidateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VilidateUser" message="tns:IService_VilidateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VilidateUserResponse" message="tns:IService_VilidateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuDll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMenuDll" message="tns:IService_GetMenuDll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMenuDllResponse" message="tns:IService_GetMenuDll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuDllFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMenuDllFile" message="tns:IService_GetMenuDllFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMenuDllFileResponse" message="tns:IService_GetMenuDllFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BookingInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BookingInfoList" message="tns:IService_BookingInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BookingInfoListResponse" message="tns:IService_BookingInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BlcInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BlcInfoList" message="tns:IService_BlcInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BlcInfoListResponse" message="tns:IService_BlcInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAndUnloadPortInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/LoadAndUnloadPortInfoList" message="tns:IService_LoadAndUnloadPortInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/LoadAndUnloadPortInfoListResponse" message="tns:IService_LoadAndUnloadPortInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CleanManifestInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CleanManifestInfoList" message="tns:IService_CleanManifestInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CleanManifestInfoListResponse" message="tns:IService_CleanManifestInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EdiLetPassInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EdiLetPassInfoList" message="tns:IService_EdiLetPassInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EdiLetPassInfoListResponse" message="tns:IService_EdiLetPassInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CstVslInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CstVslInfoList" message="tns:IService_CstVslInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CstVslInfoListResponse" message="tns:IService_CstVslInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CodecoInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CodecoInfoList" message="tns:IService_CodecoInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CodecoInfoListResponse" message="tns:IService_CodecoInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PremanifestInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PremanifestInfoList" message="tns:IService_PremanifestInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PremanifestInfoListResponse" message="tns:IService_PremanifestInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllowData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllowData" message="tns:IService_getAllowData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllowDataResponse" message="tns:IService_getAllowData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmbarkData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getEmbarkData" message="tns:IService_getEmbarkData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getEmbarkDataResponse" message="tns:IService_getEmbarkData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BookingInfoOriginalList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BookingInfoOriginalList" message="tns:IService_BookingInfoOriginalList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BookingInfoOriginalListResponse" message="tns:IService_BookingInfoOriginalList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BlcInfoOriginalList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BlcInfoOriginalList" message="tns:IService_BlcInfoOriginalList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BlcInfoOriginalListResponse" message="tns:IService_BlcInfoOriginalList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAndUnloadPortInfoOriginalList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/LoadAndUnloadPortInfoOriginalList" message="tns:IService_LoadAndUnloadPortInfoOriginalList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/LoadAndUnloadPortInfoOriginalListResponse" message="tns:IService_LoadAndUnloadPortInfoOriginalList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CleanManifestInfoOriginalList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CleanManifestInfoOriginalList" message="tns:IService_CleanManifestInfoOriginalList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CleanManifestInfoOriginalListResponse" message="tns:IService_CleanManifestInfoOriginalList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EdiLetPassInfoOriginalList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EdiLetPassInfoOriginalList" message="tns:IService_EdiLetPassInfoOriginalList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EdiLetPassInfoOriginalListResponse" message="tns:IService_EdiLetPassInfoOriginalList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CstVslInfoOriginalList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CstVslInfoOriginalList" message="tns:IService_CstVslInfoOriginalList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CstVslInfoOriginalListResponse" message="tns:IService_CstVslInfoOriginalList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CodecoInfoOriginalList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CodecoInfoOriginalList" message="tns:IService_CodecoInfoOriginalList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CodecoInfoOriginalListResponse" message="tns:IService_CodecoInfoOriginalList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PremanifestInfoOriginalList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PremanifestInfoOriginalList" message="tns:IService_PremanifestInfoOriginalList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PremanifestInfoOriginalListResponse" message="tns:IService_PremanifestInfoOriginalList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UploadFile" name="FileWrapper" message="tns:FileWrapper" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UploadFileResponse" name="result" message="tns:result" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DownloadFile" message="tns:IService_DownloadFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DownloadFileResponse" message="tns:IService_DownloadFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadPhysicalApplicationPathFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DownLoadPhysicalApplicationPathFile" message="tns:IService_DownLoadPhysicalApplicationPathFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DownLoadPhysicalApplicationPathFileResponse" message="tns:IService_DownLoadPhysicalApplicationPathFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetFileList" message="tns:IService_GetFileList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetFileListResponse" message="tns:IService_GetFileList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetFileInfo" message="tns:IService_GetFileInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetFileInfoResponse" message="tns:IService_GetFileInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FreeApply">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FreeApply" message="tns:IService_FreeApply_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FreeApplyResponse" message="tns:IService_FreeApply_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ChangePassword" message="tns:IService_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ChangePasswordResponse" message="tns:IService_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPremanifestInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getPremanifestInfo" message="tns:IService_getPremanifestInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getPremanifestInfoResponse" message="tns:IService_getPremanifestInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCodecoInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCodecoInfo" message="tns:IService_getCodecoInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCodecoInfoResponse" message="tns:IService_getCodecoInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCstVslInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCstVslInfo" message="tns:IService_getCstVslInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCstVslInfoResponse" message="tns:IService_getCstVslInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEdiLetPassInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getEdiLetPassInfo" message="tns:IService_getEdiLetPassInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getEdiLetPassInfoResponse" message="tns:IService_getEdiLetPassInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCleanManifestInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCleanManifestInfo" message="tns:IService_getCleanManifestInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCleanManifestInfoResponse" message="tns:IService_getCleanManifestInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLoadAndUnloadPortInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getLoadAndUnloadPortInfo" message="tns:IService_getLoadAndUnloadPortInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getLoadAndUnloadPortInfoResponse" message="tns:IService_getLoadAndUnloadPortInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBlcInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getBlcInfo" message="tns:IService_getBlcInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getBlcInfoResponse" message="tns:IService_getBlcInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBookingInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getBookingInfo" message="tns:IService_getBookingInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getBookingInfoResponse" message="tns:IService_getBookingInfo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetYtServerData">
+      <soap:operation soapAction="http://tempuri.org/IService/GetYtServerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewGetYtServerData">
+      <soap:operation soapAction="http://tempuri.org/IService/NewGetYtServerData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VilidateUser">
+      <soap:operation soapAction="http://tempuri.org/IService/VilidateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuDll">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMenuDll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuDllFile">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMenuDllFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingInfoList">
+      <soap:operation soapAction="http://tempuri.org/IService/BookingInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlcInfoList">
+      <soap:operation soapAction="http://tempuri.org/IService/BlcInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAndUnloadPortInfoList">
+      <soap:operation soapAction="http://tempuri.org/IService/LoadAndUnloadPortInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanManifestInfoList">
+      <soap:operation soapAction="http://tempuri.org/IService/CleanManifestInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EdiLetPassInfoList">
+      <soap:operation soapAction="http://tempuri.org/IService/EdiLetPassInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CstVslInfoList">
+      <soap:operation soapAction="http://tempuri.org/IService/CstVslInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodecoInfoList">
+      <soap:operation soapAction="http://tempuri.org/IService/CodecoInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PremanifestInfoList">
+      <soap:operation soapAction="http://tempuri.org/IService/PremanifestInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllowData">
+      <soap:operation soapAction="http://tempuri.org/IService/getAllowData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmbarkData">
+      <soap:operation soapAction="http://tempuri.org/IService/getEmbarkData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingInfoOriginalList">
+      <soap:operation soapAction="http://tempuri.org/IService/BookingInfoOriginalList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlcInfoOriginalList">
+      <soap:operation soapAction="http://tempuri.org/IService/BlcInfoOriginalList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAndUnloadPortInfoOriginalList">
+      <soap:operation soapAction="http://tempuri.org/IService/LoadAndUnloadPortInfoOriginalList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CleanManifestInfoOriginalList">
+      <soap:operation soapAction="http://tempuri.org/IService/CleanManifestInfoOriginalList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EdiLetPassInfoOriginalList">
+      <soap:operation soapAction="http://tempuri.org/IService/EdiLetPassInfoOriginalList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CstVslInfoOriginalList">
+      <soap:operation soapAction="http://tempuri.org/IService/CstVslInfoOriginalList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodecoInfoOriginalList">
+      <soap:operation soapAction="http://tempuri.org/IService/CodecoInfoOriginalList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PremanifestInfoOriginalList">
+      <soap:operation soapAction="http://tempuri.org/IService/PremanifestInfoOriginalList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/IService/UploadFile" style="document" />
+      <wsdl:input name="FileWrapper">
+        <soap:header message="tns:FileWrapper_Headers" part="in0" use="literal" />
+        <soap:header message="tns:FileWrapper_Headers" part="in1" use="literal" />
+        <soap:header message="tns:FileWrapper_Headers" part="in2" use="literal" />
+        <soap:header message="tns:FileWrapper_Headers" part="in3" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="result">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap:operation soapAction="http://tempuri.org/IService/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadPhysicalApplicationPathFile">
+      <soap:operation soapAction="http://tempuri.org/IService/DownLoadPhysicalApplicationPathFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileList">
+      <soap:operation soapAction="http://tempuri.org/IService/GetFileList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/GetFileInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FreeApply">
+      <soap:operation soapAction="http://tempuri.org/IService/FreeApply" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPremanifestInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/getPremanifestInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCodecoInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/getCodecoInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCstVslInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/getCstVslInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEdiLetPassInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/getEdiLetPassInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCleanManifestInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/getCleanManifestInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLoadAndUnloadPortInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/getLoadAndUnloadPortInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlcInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/getBlcInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookingInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/getBookingInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://180.167.29.26/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

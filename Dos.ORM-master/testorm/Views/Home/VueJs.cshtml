@@ -1,0 +1,70 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VueJs</title>
+    @*<link type="text/css" rel="stylesheet" href="~/Content/bootstrap-3.3.7/dist/css/bootstrap.css" />*@
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.0.1/jquery.js"></script>
+    @*<script type="text/javascript" src="~/Content/bootstrap-3.3.7/dist/js/bootstrap.js"></script>*@
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 先引入 Vue -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <style>
+        label {
+            margin-left: 20px;
+        }
+
+        .el-table {
+            overflow-x: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div id="app1">
+        <p onload="Math.random(0,1)"></p>
+        <p><input id="message" class="el-input__inner" /></p>
+        <p><label class="el-form-item__label">名字</label><input id="name" v-model="data.name" class="el-input__inner" /></p>
+        <p><label class="el-form-item__label">id</label><input id="id" v-model="data.id" readonly="readonly" class="el-input__inner" /></p>
+        <p><label class="el-form-item__label">tel</label><input id="tel" v-model="data.tel" class="el-input__inner" /></p>
+        <p>年龄<span>{{data.age}}</span></p>
+        <p style="text-align:center;"><button onclick="loadData()" class="el-button el-button--primary">查询</button><button onclick="DataSave()" class="el-button el-button--primary">保存</button></p>
+    </div>
+    
+    @*<div id="app">
+        {{ Message }}
+    </div>*@
+</body>
+</html>
+<script>
+    var vue = new Vue({
+        el: "#app1",
+        data: { data: {}}
+    });
+    function loadData() {
+        $.post("/home/vuejsData", { id:$("#message").val()}, function (data) {
+            debugger;
+            vue.data = data;
+        });
+    }
+    function DataSave() {
+        $.post("/home/SaveVueJs",vue.data, function (data) {
+            debugger;
+            // vue.data = data;
+            alert(data.Message);
+        });
+    }
+    function loadChildData() {
+        $("#dr").load("/home/GetFormChild", { company: $("#company").val(), preEntryId: $("#edino").val(), table: $("#table").val() }, function (data) {
+            // alert(data);
+        });
+    }
+
+</script>

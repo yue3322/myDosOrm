@@ -1,0 +1,33 @@
+﻿@model System.Data.DataTable
+@{
+    Layout = null;
+}
+
+
+    <table cellspacing="0" cellpadding="0" border="0" class="el-table__header">
+        <thead>
+            <tr class="datagrid-header">
+                @foreach (System.Data.DataColumn obj in Model.Columns)
+            {
+                    <td>
+                        @obj.Caption
+                </td>
+                }
+            </tr>
+        </thead>
+        <tbody class="datagrid-body">
+            @foreach (System.Data.DataRow obj in  Model.Rows)
+            {
+                <tr>
+                    @foreach (System.Data.DataColumn obj2 in Model.Columns)
+                    {
+                        <td>
+                            @obj[obj2.Caption].ToString()
+                    </td>
+                    }
+                </tr>
+            }
+        </tbody>
+
+    </table>
+

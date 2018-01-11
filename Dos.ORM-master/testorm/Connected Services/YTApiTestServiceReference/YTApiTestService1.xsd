@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CUSWEB_RSK_RESULT_REL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DECL_BEG_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DECL_END_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DECL_CODE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DECL_NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TRADE_CO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TRADE_NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="I_E_FLAG" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RSLT_BEG_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RSLT_END_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ENTRY_ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUSWEB_RSK_RESULT_RELResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CUSWEB_RSK_RESULT_RELResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUSWEB_RSK_RESULT_YSGK">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DECL_BEG_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DECL_END_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TRADE_CO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TRADE_NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DECL_CODE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DECL_NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="I_E_FLAG" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ENTRY_ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUSWEB_RSK_RESULT_YSGKResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CUSWEB_RSK_RESULT_YSGKResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUSWEB_REL_PASS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BILL_NO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="I_E_FLAG" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PASS_BEG_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PASS_END_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ENTRY_ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUSWEB_REL_PASSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CUSWEB_REL_PASSResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ODISRC_CNCP01">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BILL_NO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SENDER_BEG_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SENDER_END_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="I_E_BEG_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="I_E_END_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="I_E_FLAG" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VOYAGE_NO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SHIP_NAME_EN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ODISRC_CNCP01Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ODISRC_CNCP01Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUSWEB_H2000RTAX">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="D_BEG_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="D_END_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="E_BEG_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="E_END_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IO_FLAG" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BILL_NO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ENTRY_ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUSWEB_H2000RTAXResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CUSWEB_H2000RTAXResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUSWEB_POSTRTAX">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="D_BEG_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="D_END_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="E_BEG_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="E_END_DATE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IO_FLAG" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BILL_NO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ENTRY_ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CUSWEB_POSTRTAXResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CUSWEB_POSTRTAXResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ODISRC_COSTRP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BL_NO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CTN_NO" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ODISRC_COSTRPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ODISRC_COSTRPResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

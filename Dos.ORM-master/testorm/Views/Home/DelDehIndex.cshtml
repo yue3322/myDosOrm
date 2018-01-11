@@ -1,0 +1,86 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FormHead</title>
+    @*<link type="text/css" rel="stylesheet" href="~/Content/bootstrap-3.3.7/dist/css/bootstrap.css" />*@
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.0.1/jquery.js"></script>
+    @*<script type="text/javascript" src="~/Content/bootstrap-3.3.7/dist/js/bootstrap.js"></script>*@
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 先引入 Vue -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <style>
+        label {
+            margin-left: 20px;
+        }
+
+        .el-table {
+            overflow-x: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form class="el-form">
+            <div class="el-form-item">
+
+                <div class="el-form-item__content" style="margin-left: 80px;">
+                    <div class="el-input">
+                        @*<select id="company" autocomplete="off" placeholder="请选择活动区域" readonly="readonly" type="text" rows="2" class="el-input__inner" style="width:200px;">
+                                <option value="40">40</option>
+                                <option value="怡中">怡中</option>
+                                <option value="美设">美设</option>
+                                <option value="航联">航联</option>
+                                <option value="亚东">亚东</option>
+                            </select>*@
+                        @*<label class="el-form-item__label" style="width: 80px;float:none;">EdiNo</label>
+                            <input autocomplete="off" type="text" rows="2" style="width:200px;" validateevent="true" class="el-input__inner" id="edino">
+                            <label class="el-form-item__label" style="width: 80px;float:none;">提单号</label>
+                            <input autocomplete="off" type="text" rows="2" style="width:200px;" validateevent="true" class="el-input__inner" id="billno">*@
+                        <label class="el-form-item__label" style="width: 80px;float:none;">报关单主键</label>
+                        <input autocomplete="off" type="text" rows="2" style="width:200px;" validateevent="true" class="el-input__inner" id="dehid">
+                        <label class="el-form-item__label" style="width: 80px;float:none;">customercd</label>
+                        <input autocomplete="off" type="text" rows="2" style="width:200px;" value="1000001000000" validateevent="true" class="el-input__inner" id="customercd">
+                        <button type="button" class="el-button el-button--primary" id="sub" onclick="loadData()"><span>提交</span></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+    <div class="demo-block demo-box demo-zh-CN demo-table">
+        <div id="dr" class="el-table el-table--fit el-table--border el-table--enable-row-hover el-table--enable-row-transition" style="width: 100%;">
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function loadData() {
+        var id = $("#dehid").val();
+        var customercd = $("#customercd").val();
+        if (id == null || id == "" || customercd == null || customercd == "") {
+            alert("请填写完整");
+            return;
+        }
+        $.post("/home/DelDeh", { id: id, customercd: customercd }, function (data) {
+            if (data.Success) {
+                alert("删除成功");
+            } else {
+                alert(data.Message);
+            }
+        });
+    }
+
+</script>
+

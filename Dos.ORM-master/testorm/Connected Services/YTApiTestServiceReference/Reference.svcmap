@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="eccadbdc-6613-4eab-bdc7-4f9b9460f8de" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://180.167.29.27/WCF/YTApiTestService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="YTApiTestService.wsdl" MetadataType="Wsdl" ID="5d2fecfa-975f-4b39-9c1d-6b2b42b62833" SourceId="1" SourceUrl="http://180.167.29.27/WCF/YTApiTestService.svc?wsdl" />
+    <MetadataFile FileName="YTApiTestService.xsd" MetadataType="Schema" ID="91c153c6-08ea-4d20-86e8-a9f44343054d" SourceId="1" SourceUrl="http://180.167.29.27/WCF/YTApiTestService.svc?xsd=xsd1" />
+    <MetadataFile FileName="YTApiTestService1.xsd" MetadataType="Schema" ID="3109116b-7a2d-442e-96c7-8f62b2f70a0e" SourceId="1" SourceUrl="http://180.167.29.27/WCF/YTApiTestService.svc?xsd=xsd0" />
+    <MetadataFile FileName="YTApiTestService.disco" MetadataType="Disco" ID="679dc045-92ea-43d7-bdf4-b5cb4ddfbb9e" SourceId="1" SourceUrl="http://180.167.29.27/WCF/YTApiTestService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,46 @@
+﻿@model System.Data.DataTable
+@{
+
+    ViewBag.Title = "Home Page";
+}
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<table>
+    @*@foreach (System.Data.DataRow obj in Model.Rows)
+    {
+        <tr>
+            <td>name:@obj["name"]</td>
+            <td>id:@obj["id"]</td>
+        </tr>
+    }*@
+    <a href="/home/formhead">客户服务端查询</a>
+    @*<a href="/home/wcf">客户服务端查询</a>*@
+    <a href="/home/deldehindex">删除报关单</a>
+    <a href="/home/vuejs">vuejs</a>
+    <div onclick="">
+        获取JSON
+    </div>
+</table>
+<div>
+    <p>用户名:<input type="text" value="" id="username" /></p>
+    <p>密码:<input type="text" value="" id="password" /></p>
+    <p><button id="login" onclick="login()">登录</button></p>
+</div>
+<script>
+    $.ajax({
+        url: "/home/GetJson", data: {}, dataType: 'JSONP', success: function (data) {
+            debugger;
+            alert(data);
+        }
+    });
+    function login() {
+        $.ajax({
+            url: "/home/Login", data: { username: $("#username").val(), password: $("#password").val() }, dataType: 'JSON', success: function (data) {
+                if (data.Success) {
+                    alert("登录成功");
+                } else {
+                    alert("登录失败");
+                }
+            }
+        });
+    }
+</script>

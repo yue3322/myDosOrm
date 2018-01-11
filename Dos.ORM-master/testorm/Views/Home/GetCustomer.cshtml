@@ -1,0 +1,68 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetCustomer</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td,th {
+            border: 1px solid #ddd;
+        }
+    </style>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/vue/1.0.14/vue.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <span></span>
+    </div>
+    <div id="app">
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>名字</th>
+                    <th>tel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in arr">
+                    <td>{{item.id}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.tel}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <todo-item v-bind:todo="todo">
+
+        </todo-item>
+        <h1 v-if="type=='A'">Yes</h1>
+    </div>
+</body>
+</html>
+<script>
+    Vue.component("com-test", {
+        template: "<span>我是组件</span>"
+    });
+    Vue.component('todo-item', {
+        props:["todo"],
+        template: '<a>{{todo.test}}这是个待办项</a>'
+    })
+    var vue = new Vue({
+        el: "#app",
+        data: { arr: [],todo:{test:"test"},type:"A" }
+    });
+    $.post("/home/GetCustomerList", {}, function (data) {
+        debugger;
+        vue.arr = data.list;
+    });
+
+</script>
