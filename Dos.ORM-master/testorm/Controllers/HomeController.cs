@@ -1121,7 +1121,7 @@ namespace testorm.Controllers
             try
             {
                 var deh = DcEpDecHeadList.Fetch(new DcEpDecHeadCriteria { DehId = id }).FirstOrDefault();
-                deh.Save();
+               // deh.Save();
                 if (deh != null)
                 {
                     deh.DeleteAllChild = true;
@@ -1251,6 +1251,30 @@ namespace testorm.Controllers
         void MysqlLog(string log)
         {
 
+        }
+        public void AutoRegister()
+        {
+            HttpWebRequest httpWebRequest;
+            HttpWebResponse webResponse;
+            Stream getStream;
+            StreamReader streamReader;
+            string getString = "";
+            httpWebRequest = (HttpWebRequest)HttpWebRequest.Create("http://www.99myyh.com/core/Cx_Ajax.php");
+            httpWebRequest.Accept = "*/*";
+            httpWebRequest.Referer = "http://www.99myyh.com/core/Cx_Ajax.php";
+            CookieContainer co = new CookieContainer();
+            //co.SetCookies(new Uri("http://www.99myyh.com/core/Cx_Ajax.php"), "");
+            //httpWebRequest.CookieContainer = co;
+            httpWebRequest.UserAgent =
+                "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Maxthon; .NET CLR 1.1.4322)";
+            httpWebRequest.Method = "POST";
+            webResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            var header = webResponse.Headers.ToString();
+            getStream = webResponse.GetResponseStream();
+            streamReader = new StreamReader(getStream, Encoding.GetEncoding("utf-8"));
+            getString = streamReader.ReadToEnd();
+            streamReader.Close();
+            getStream.Close();
         }
         public ActionResult Login(string username, string password)
         {
