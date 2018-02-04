@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+    int num = 0;
+}
+@model List<Dos.Model.pdf>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PDF</title>
+    @*<link type="text/css" rel="stylesheet" href="~/Content/bootstrap-3.3.7/dist/css/bootstrap.css" />*@
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.0.1/jquery.js"></script>
+    @*<script type="text/javascript" src="~/Content/bootstrap-3.3.7/dist/js/bootstrap.js"></script>*@
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 先引入 Vue -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <style>
+        li{
+            padding:10px;
+            list-style:none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            @foreach (var item in Model)
+            {
+                num++;
+                <li>@num:<a href="/home/pdfdtl?id=@item.Id">@item.Titile</a><a onclick="DelPDF('@item.Id')">删除</a></li>
+            }
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    function DelPDF(id) {
+        $.ajax({
+            url:"/home/delpdf",
+            type:"post",
+            data:{id:id},
+            success:function(data) {
+                if(data.Success) {
+                    alert("删除成功");
+                }else {
+                    alert(data.Message);
+                }
+            }
+        });
+    }
+</script>

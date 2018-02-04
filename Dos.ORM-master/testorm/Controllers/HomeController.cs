@@ -1,7 +1,6 @@
 ﻿using Dos.Model;
 using Dos.ORM;
 using log4net;
-using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -394,9 +393,12 @@ namespace testorm.Controllers
             int eddd = 0;
 
             DB.OracleDB.RegisterSqlLogger(database_OnLog);
+            DB.MysqlDB.RegisterSqlLogger(database_OnLog);
             var exCredential = new List<string>() { "3", "4", "5", "8", "B", "" };
             //var Credential = CachePool.GetValue("DcBasSuperviseCredential" + Csla.ApplicationContext.User.Identity.Name) as DcBasSuperviseCredentialList;
-            var cusdecl1111 = DB.OracleDB.From<DC_EP_DEC_HEAD_O>().Where(x => x.DEH_ENTRY_NO == "222920170001934177").ToList();
+            var cusdecl1111 = DB.OracleDB.From<DC_EP_DEC_HEAD_O>().Where(x => x.DEH_ENTRY_NO == "22292017000193417711").First();
+
+            var head11D = DcEpDecHeadList.Fetch(new DcEpDecHeadCriteria { DehId = 191936825972021 });
 
             var Credential = DcBasSuperviseCredentialList.Fetch(new DcBasSuperviseCredentialCriteria { });
             //CachePool.SetValue("DcBasSuperviseCredential" + Csla.ApplicationContext.User.Identity.Name, Credential, 36000);
@@ -951,7 +953,7 @@ namespace testorm.Controllers
             }
             else if (company == "亚东")
             {
-                str = "http://116.247.101.238.141:8733";
+                str = "http://116.247.101.238:8733/Design_Time_Addresses/CustomerServiceWcf/CustomerServiceWcfService/";
             }
             else if (company == "40")
             {
@@ -1026,7 +1028,7 @@ namespace testorm.Controllers
             }
             catch (Exception ex)
             {
-                return Json(new { Success = false, Message = "请输入edino或提单号" });
+                return Json(new { Success = false, Message = "ex:" + ex.Message });
             }
             return View(dr);
         }
@@ -1051,7 +1053,7 @@ namespace testorm.Controllers
             }
             else if (company == "亚东")
             {
-                str = "http://116.247.101.238.141:8733";
+                str = "http://116.247.101.238:8733";
             }
             else if (company == "40")
             {
@@ -1121,7 +1123,7 @@ namespace testorm.Controllers
             try
             {
                 var deh = DcEpDecHeadList.Fetch(new DcEpDecHeadCriteria { DehId = id }).FirstOrDefault();
-               // deh.Save();
+                // deh.Save();
                 if (deh != null)
                 {
                     deh.DeleteAllChild = true;
@@ -1182,7 +1184,7 @@ namespace testorm.Controllers
         public ActionResult GetCustomerList()
         {
             var list = DB.MysqlDB.From<customer>().ToList();
-            return Json(new {list=list});
+            return Json(new { list = list });
         }
         public ActionResult VueJsData(customer cus)
         {
@@ -1212,11 +1214,11 @@ namespace testorm.Controllers
         public ActionResult WService()
         {
 
-           // var factory = new ChannelFactory<testorm.WService.IW>(
-                         //new NetTcpBinding(),
-                         //"");
+            // var factory = new ChannelFactory<testorm.WService.IW>(
+            //new NetTcpBinding(),
+            //"");
             //var _client = factory.CreateChannel();
-            var timer =  new System.Timers.Timer();
+            var timer = new System.Timers.Timer();
             timer.Interval = 5000;
             timer.Elapsed += new System.Timers.ElapsedEventHandler(Timer);
             timer.Start();
@@ -1280,26 +1282,27 @@ namespace testorm.Controllers
         {
             try
             {
-                var dt = new DataTable();
-                DB.MysqlDB.RegisterSqlLogger(MysqlLog);
-                //var testas = DB.MysqlDB.Count<customer>(customer._.name == username && customer._.tel == password);//   .Count<customer>().Where(x => x.== cus.id);
-                MySqlParameter[] paras = new MySqlParameter[]{//参数数组
-                new MySql.Data.MySqlClient.MySqlParameter("@Name",MySql.Data.MySqlClient.MySqlDbType.VarChar,50),
-                //new MySql.Data.MySqlClient.MySqlParameter("@Password",MySql.Data.MySqlClient.MySqlDbType.VarChar,50)
-            };
-                paras[0].Value = username;//绑定用户名
-                //paras[1].Value = password;//绑定用户密码
+                //    var dt = new DataTable();
+                //    DB.MysqlDB.RegisterSqlLogger(MysqlLog);
+                //    //var testas = DB.MysqlDB.Count<customer>(customer._.name == username && customer._.tel == password);//   .Count<customer>().Where(x => x.== cus.id);
+                //    //MySqlParameter[] paras = new MySqlParameter[]{//参数数组
+                //    //new MySql.Data.MySqlClient.MySqlParameter("@Name",MySql.Data.MySqlClient.MySqlDbType.VarChar,50),
+                //    //new MySql.Data.MySqlClient.MySqlParameter("@Password",MySql.Data.MySqlClient.MySqlDbType.VarChar,50)
+                //};
+                //    paras[0].Value = username;//绑定用户名
+                //    //paras[1].Value = password;//绑定用户密码
 
-                //var testas = DB.MysqlDB.FromSql("select * from customer c where c.name=@username").AddParameter(paras).ToFirst<customer>();//.where(customer._.name == username && customer._.tel == password);
-                 var testas = DB.MysqlDB.FromSql("select * from customer c where c.name='"+username+"',c").ToFirst<customer>();
-                if (testas != null)
-                {
-                    return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
-                }
-                else
-                {
-                    return Json(new { Success = false }, JsonRequestBehavior.AllowGet);
-                }
+                //    //var testas = DB.MysqlDB.FromSql("select * from customer c where c.name=@username").AddParameter(paras).ToFirst<customer>();//.where(customer._.name == username && customer._.tel == password);
+                //     var testas = DB.MysqlDB.FromSql("select * from customer c where c.name='"+username+"',c").ToFirst<customer>();
+                //    if (testas != null)
+                //    {
+                //        return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
+                //    }
+                //    else
+                //    {
+                //        return Json(new { Success = false }, JsonRequestBehavior.AllowGet);
+                //    }
+                return null;
             }
             catch (Exception ex)
             {
@@ -1314,6 +1317,20 @@ namespace testorm.Controllers
             //wc.Encoding = Encoding.UTF8;
             //HtmlDocument doc = new HtmlDocument();
             return View();
+        }
+        /// <summary>
+        /// 测试dosorm框架自动去掉查询字段值的N的bug
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult TestDosOrmNBug()
+        {
+            var str = "select * from dc_ep_dec_head where sys_customer_cd ='1000001000000' and Deh_Traf_Name = 'AS COLUMBIA' and Deh_Voyage_no = 'A0004SN' and deh_bill_no='SNKO010180102653'";
+
+            var head = DB.OracleDB.FromSql(str).ToFirst<dc_ep_dec_head>();
+            var headLamp = DB.OracleDB.From<DC_EP_DEC_HEAD_O>().Where(x => x.SYS_CUSTOMER_CD == "1000001000000" && x.DEH_TRAF_NAME == "AS COLUMBIA" && x.DEH_VOYAGE_NO == "A0004SN" && x.DEH_BILL_NO == "SNKO010180102653").ToFirstDefault();
+            var headCSLA = DcEpDecHeadList.Fetch(new DcEpDecHeadCriteria { DehBillNo = "115088666" });
+            var headCSLASingle = DcEpDecHeadList.Fetch(new DcEpDecHeadCriteria { DehTrafName = "220N", DehVoyageNo = "220", DehBillNo = "115088666" }).FirstOrDefault();
+            return null;
         }
         public ActionResult getEco()
         {
@@ -1356,19 +1373,29 @@ namespace testorm.Controllers
             }
             return DocuNumber;
         }
-        public void createWCF() {
-             //创建服务网址
+        /// <summary>
+        /// 随附单据表单
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult docAttachedEntryId(RunBackModel model)
+        {
+            var doc = new documentsattached();
+            return Json(new { Success = true });
+        }
+        public void createWCF()
+        {
+            //创建服务网址
             Uri url = new Uri("http://localhost:5220/Service1/");
-                //创建服务器主机
-                var host = new ServiceHost(typeof(Service1), url);
-                //创建服务器主机
-                host.AddServiceEndpoint(typeof(IService1), new WSHttpBinding(), "serviceName1");
-                //启用元素交换
-                ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
-                smb.HttpGetEnabled = true;
-                //host.Description.Behaviors.Add(smb);
-                host.Open();
-                //var thread = new Thread(RunService);
+            //创建服务器主机
+            var host = new ServiceHost(typeof(Service1), url);
+            //创建服务器主机
+            host.AddServiceEndpoint(typeof(IService1), new WSHttpBinding(), "serviceName1");
+            //启用元素交换
+            ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
+            smb.HttpGetEnabled = true;
+            //host.Description.Behaviors.Add(smb);
+            host.Open();
+            //var thread = new Thread(RunService);
         }
         public void UpdateHead()
         {
@@ -1672,6 +1699,62 @@ namespace testorm.Controllers
         //            }
         //        }
         //}
+        #region pdf
+        public ActionResult PDF()
+        {
+            var list = DB.MysqlDB.From<pdf>().ToList();
+            return View(list);
+            //var htmlweb = new HtmlAgilityPack.HtmlWeb();
+            //htmlweb.OverrideEncoding = Encoding.GetEncoding("utf-8");
+            //htmlweb.PreRequest = new HtmlAgilityPack.HtmlWeb.PreRequestHandler(PreRequest);
+            //var docweb = htmlweb.Load("http://www.minxue.net/55/n-102355.html");
+            //string html = "<div id='test'><span>testspan1</span><span>testspan2</span><span id='span3'>testspan3</span><div><span>testspanA1</span></div></div>";
+            //var doc = new HtmlAgilityPack.HtmlDocument();
+            //doc.LoadHtml(html);
+            //var span = doc.DocumentNode.SelectSingleNode("//div[@id='test']/span[@id='span3']");
+            //var span2 = doc.DocumentNode.SelectNodes("//div[@id='test']/span");
+            //var span3 = doc.DocumentNode.SelectNodes("./div//span");
+
+        }
+        public ActionResult PDFDtl(long id)
+        {
+            var p = DB.MysqlDB.From<pdf>().Where(x => x.Id == id).ToFirstDefault();
+            var d = DB.MysqlDB.From<pdf_dtl>().Where(x => x.id == id).ToList();
+            var model = new  PDFModel();
+            model.p = p;
+            model.dtls = d;
+            return View(model);
+        }
+        public ActionResult DelPDF(long id)
+        {
+            try
+            {
+                var p = DB.MysqlDB.From<pdf>().Where(x => x.Id == id).ToFirst();
+               var ret = DB.MysqlDB.Delete(p);
+                return Json(new { Success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Success = false, Message = ex.Message });
+            }
+        }
+        public class PDFModel
+        {
+            public PDFModel()
+            {
+                dtls = new List<pdf_dtl>();
+            }
+            public pdf p { get; set; }
+            public List<pdf_dtl> dtls { get; set; }
+        }
+        #endregion
+        bool PreRequest(HttpWebRequest request)
+        {
+            request.Headers[HttpRequestHeader.AcceptEncoding] = "gzip, deflate";
+            request.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
+            request.CookieContainer = new CookieContainer();
+            return true;
+        }
         public class CompanyResult
         {
             public CompanyResult()
@@ -1703,6 +1786,45 @@ namespace testorm.Controllers
                 }
             }
             public int age { get; set; }
+        }
+        /// <summary>
+        /// 随附单据表单上传字段
+        /// </summary>
+        public class RunBackModel
+        {
+            public string method;       //insert/upload必填
+
+            public string gotoFlag;
+            public string id;
+            public string dataStatus;
+            public string status;
+            public string groupId;
+            public string fileDigest;
+            public string signCert;
+            public string fileSign;
+            public string fileInfo;
+            public string fileInfoStr;
+            public string filePath;
+            public string signTime;
+            public string tradeFileName;
+            public string lockFlag;
+            public string tradeCode;
+            public string formatType;   //US insert必填
+            public string preEntryId;   //EDI号 insert必填
+            public string entryId;      //EDI号 insert必填
+            public string declCode;     //卡号 insert必填
+            public string declName;     //卡号绑定的操作人 insert必填
+            public string fileTypeCN;   //仅upload使用的参数
+            public string fileType;     //附件类型 00000001 insert必填
+            public string fileTypeSign; //仅upload使用的参数
+            public string customsCode;  //关区 2229 insert必填
+            public string signUnit;     //上传企业代码 3109980360 insert必填
+            public string fileName;
+            public string opNote;
+            public string edocOwnerCode;
+            public string edocOwnerName;
+            public string uploadFileName;
+            public string cookie;
         }
         public class Tools
         {
