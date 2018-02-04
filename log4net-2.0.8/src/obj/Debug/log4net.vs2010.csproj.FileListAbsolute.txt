@@ -1,0 +1,6 @@
+D:\dosorm\log4net-2.0.8\build\bin\net\4.0\debug\log4net.dll
+D:\dosorm\log4net-2.0.8\build\bin\net\4.0\debug\log4net.pdb
+D:\dosorm\log4net-2.0.8\build\bin\net\4.0\debug\log4net.xml
+D:\dosorm\log4net-2.0.8\src\obj\Debug\log4net.vs2010.csprojResolveAssemblyReference.cache
+D:\dosorm\log4net-2.0.8\src\obj\Debug\log4net.dll
+D:\dosorm\log4net-2.0.8\src\obj\Debug\log4net.pdb
