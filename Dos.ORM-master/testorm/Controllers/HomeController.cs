@@ -1,7 +1,6 @@
 ﻿using Dos.Model;
 using Dos.ORM;
 using log4net;
-using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -394,10 +393,20 @@ namespace testorm.Controllers
             //testasync();
             int eddd = 0;
 
+<<<<<<< HEAD
             //DB.OracleDB.RegisterSqlLogger(database_OnLog);
             var exCredential = new List<string>() { "3", "4", "5", "8", "B", "" };
             //var Credential = CachePool.GetValue("DcBasSuperviseCredential" + Csla.ApplicationContext.User.Identity.Name) as DcBasSuperviseCredentialList;
             //var cusdecl1111 = DB.OracleDB.From<DC_EP_DEC_HEAD_O>().Where(x => x.DEH_ENTRY_NO == "222920170001934177").ToList();
+=======
+            DB.OracleDB.RegisterSqlLogger(database_OnLog);
+            DB.MysqlDB.RegisterSqlLogger(database_OnLog);
+            var exCredential = new List<string>() { "3", "4", "5", "8", "B", "" };
+            //var Credential = CachePool.GetValue("DcBasSuperviseCredential" + Csla.ApplicationContext.User.Identity.Name) as DcBasSuperviseCredentialList;
+            var cusdecl1111 = DB.OracleDB.From<DC_EP_DEC_HEAD_O>().Where(x => x.DEH_ENTRY_NO == "22292017000193417711").First();
+
+            var head11D = DcEpDecHeadList.Fetch(new DcEpDecHeadCriteria { DehId = 191936825972021 });
+>>>>>>> c1722096a0d0083b0dcd1b914983e83c76c848c1
 
             //var Credential = DcBasSuperviseCredentialList.Fetch(new DcBasSuperviseCredentialCriteria { });
             //CachePool.SetValue("DcBasSuperviseCredential" + Csla.ApplicationContext.User.Identity.Name, Credential, 36000);
@@ -952,7 +961,7 @@ namespace testorm.Controllers
             }
             else if (company == "亚东")
             {
-                str = "http://116.247.101.238.141:8733";
+                str = "http://116.247.101.238:8733/Design_Time_Addresses/CustomerServiceWcf/CustomerServiceWcfService/";
             }
             else if (company == "40")
             {
@@ -1027,7 +1036,7 @@ namespace testorm.Controllers
             }
             catch (Exception ex)
             {
-                return Json(new { Success = false, Message = "请输入edino或提单号" });
+                return Json(new { Success = false, Message = "ex:" + ex.Message });
             }
             return View(dr);
         }
@@ -1052,7 +1061,7 @@ namespace testorm.Controllers
             }
             else if (company == "亚东")
             {
-                str = "http://116.247.101.238.141:8733";
+                str = "http://116.247.101.238:8733";
             }
             else if (company == "40")
             {
@@ -1122,7 +1131,7 @@ namespace testorm.Controllers
             try
             {
                 var deh = DcEpDecHeadList.Fetch(new DcEpDecHeadCriteria { DehId = id }).FirstOrDefault();
-                deh.Save();
+                // deh.Save();
                 if (deh != null)
                 {
                     deh.DeleteAllChild = true;
@@ -1183,7 +1192,7 @@ namespace testorm.Controllers
         public ActionResult GetCustomerList()
         {
             var list = DB.MysqlDB.From<customer>().ToList();
-            return Json(new {list=list});
+            return Json(new { list = list });
         }
         public ActionResult VueJsData(customer cus)
         {
@@ -1213,11 +1222,11 @@ namespace testorm.Controllers
         public ActionResult WService()
         {
 
-           // var factory = new ChannelFactory<testorm.WService.IW>(
-                         //new NetTcpBinding(),
-                         //"");
+            // var factory = new ChannelFactory<testorm.WService.IW>(
+            //new NetTcpBinding(),
+            //"");
             //var _client = factory.CreateChannel();
-            var timer =  new System.Timers.Timer();
+            var timer = new System.Timers.Timer();
             timer.Interval = 5000;
             timer.Elapsed += new System.Timers.ElapsedEventHandler(Timer);
             timer.Start();
@@ -1253,30 +1262,55 @@ namespace testorm.Controllers
         {
 
         }
+        public void AutoRegister()
+        {
+            HttpWebRequest httpWebRequest;
+            HttpWebResponse webResponse;
+            Stream getStream;
+            StreamReader streamReader;
+            string getString = "";
+            httpWebRequest = (HttpWebRequest)HttpWebRequest.Create("http://www.99myyh.com/core/Cx_Ajax.php");
+            httpWebRequest.Accept = "*/*";
+            httpWebRequest.Referer = "http://www.99myyh.com/core/Cx_Ajax.php";
+            CookieContainer co = new CookieContainer();
+            //co.SetCookies(new Uri("http://www.99myyh.com/core/Cx_Ajax.php"), "");
+            //httpWebRequest.CookieContainer = co;
+            httpWebRequest.UserAgent =
+                "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Maxthon; .NET CLR 1.1.4322)";
+            httpWebRequest.Method = "POST";
+            webResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            var header = webResponse.Headers.ToString();
+            getStream = webResponse.GetResponseStream();
+            streamReader = new StreamReader(getStream, Encoding.GetEncoding("utf-8"));
+            getString = streamReader.ReadToEnd();
+            streamReader.Close();
+            getStream.Close();
+        }
         public ActionResult Login(string username, string password)
         {
             try
             {
-                var dt = new DataTable();
-                DB.MysqlDB.RegisterSqlLogger(MysqlLog);
-                //var testas = DB.MysqlDB.Count<customer>(customer._.name == username && customer._.tel == password);//   .Count<customer>().Where(x => x.== cus.id);
-                MySqlParameter[] paras = new MySqlParameter[]{//参数数组
-                new MySql.Data.MySqlClient.MySqlParameter("@Name",MySql.Data.MySqlClient.MySqlDbType.VarChar,50),
-                //new MySql.Data.MySqlClient.MySqlParameter("@Password",MySql.Data.MySqlClient.MySqlDbType.VarChar,50)
-            };
-                paras[0].Value = username;//绑定用户名
-                //paras[1].Value = password;//绑定用户密码
+                //    var dt = new DataTable();
+                //    DB.MysqlDB.RegisterSqlLogger(MysqlLog);
+                //    //var testas = DB.MysqlDB.Count<customer>(customer._.name == username && customer._.tel == password);//   .Count<customer>().Where(x => x.== cus.id);
+                //    //MySqlParameter[] paras = new MySqlParameter[]{//参数数组
+                //    //new MySql.Data.MySqlClient.MySqlParameter("@Name",MySql.Data.MySqlClient.MySqlDbType.VarChar,50),
+                //    //new MySql.Data.MySqlClient.MySqlParameter("@Password",MySql.Data.MySqlClient.MySqlDbType.VarChar,50)
+                //};
+                //    paras[0].Value = username;//绑定用户名
+                //    //paras[1].Value = password;//绑定用户密码
 
-                //var testas = DB.MysqlDB.FromSql("select * from customer c where c.name=@username").AddParameter(paras).ToFirst<customer>();//.where(customer._.name == username && customer._.tel == password);
-                 var testas = DB.MysqlDB.FromSql("select * from customer c where c.name='"+username+"',c").ToFirst<customer>();
-                if (testas != null)
-                {
-                    return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
-                }
-                else
-                {
-                    return Json(new { Success = false }, JsonRequestBehavior.AllowGet);
-                }
+                //    //var testas = DB.MysqlDB.FromSql("select * from customer c where c.name=@username").AddParameter(paras).ToFirst<customer>();//.where(customer._.name == username && customer._.tel == password);
+                //     var testas = DB.MysqlDB.FromSql("select * from customer c where c.name='"+username+"',c").ToFirst<customer>();
+                //    if (testas != null)
+                //    {
+                //        return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
+                //    }
+                //    else
+                //    {
+                //        return Json(new { Success = false }, JsonRequestBehavior.AllowGet);
+                //    }
+                return null;
             }
             catch (Exception ex)
             {
@@ -1291,6 +1325,20 @@ namespace testorm.Controllers
             //wc.Encoding = Encoding.UTF8;
             //HtmlDocument doc = new HtmlDocument();
             return View();
+        }
+        /// <summary>
+        /// 测试dosorm框架自动去掉查询字段值的N的bug
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult TestDosOrmNBug()
+        {
+            var str = "select * from dc_ep_dec_head where sys_customer_cd ='1000001000000' and Deh_Traf_Name = 'AS COLUMBIA' and Deh_Voyage_no = 'A0004SN' and deh_bill_no='SNKO010180102653'";
+
+            var head = DB.OracleDB.FromSql(str).ToFirst<dc_ep_dec_head>();
+            var headLamp = DB.OracleDB.From<DC_EP_DEC_HEAD_O>().Where(x => x.SYS_CUSTOMER_CD == "1000001000000" && x.DEH_TRAF_NAME == "AS COLUMBIA" && x.DEH_VOYAGE_NO == "A0004SN" && x.DEH_BILL_NO == "SNKO010180102653").ToFirstDefault();
+            var headCSLA = DcEpDecHeadList.Fetch(new DcEpDecHeadCriteria { DehBillNo = "115088666" });
+            var headCSLASingle = DcEpDecHeadList.Fetch(new DcEpDecHeadCriteria { DehTrafName = "220N", DehVoyageNo = "220", DehBillNo = "115088666" }).FirstOrDefault();
+            return null;
         }
         public ActionResult getEco()
         {
@@ -1333,28 +1381,394 @@ namespace testorm.Controllers
             }
             return DocuNumber;
         }
-        public void createWCF() {
-             //创建服务网址
+        /// <summary>
+        /// 随附单据表单
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult docAttachedEntryId(RunBackModel model)
+        {
+            var doc = new documentsattached();
+            return Json(new { Success = true });
+        }
+        public void createWCF()
+        {
+            //创建服务网址
             Uri url = new Uri("http://localhost:5220/Service1/");
-                //创建服务器主机
-                var host = new ServiceHost(typeof(Service1), url);
-                //创建服务器主机
-                host.AddServiceEndpoint(typeof(IService1), new WSHttpBinding(), "serviceName1");
-                //启用元素交换
-                ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
-                smb.HttpGetEnabled = true;
-                //host.Description.Behaviors.Add(smb);
-                host.Open();
-                //var thread = new Thread(RunService);
+            //创建服务器主机
+            var host = new ServiceHost(typeof(Service1), url);
+            //创建服务器主机
+            host.AddServiceEndpoint(typeof(IService1), new WSHttpBinding(), "serviceName1");
+            //启用元素交换
+            ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
+            smb.HttpGetEnabled = true;
+            //host.Description.Behaviors.Add(smb);
+            host.Open();
+            //var thread = new Thread(RunService);
         }
         public void UpdateHead()
         {
 
         }
+<<<<<<< HEAD
         public ActionResult Liangliang()
         {
             var llList = DB.MysqlHomeDB.From<liangliang>().Where(liangliang._.time >= "2018-01-20".ToDateTime() && liangliang._.time < "2018-01-21".ToDateTime()).ToList();
             return View(llList);
+=======
+        //public ActionResult getLogListIndex()
+        //{
+
+        //}
+        //public ActionResult getLog()
+        //{
+
+        //}
+        //    public ActionResult GetMainFest(string billno)
+        //    {
+        //        string resultstr = "";
+        //        resultstr = CommonApiHelper.CUSWEB_CLEAN_BILL_RECORD(uso.UsoBlNo, null, null, null, null, "E", null, null);
+        //        QeuryStringJson model = new QeuryStringJson();
+        //        JavaScriptSerializer ser = new JavaScriptSerializer();
+        //        model = ser.Deserialize<QeuryStringJson>(resultstr);
+
+        //        if (model.GCCResult.Page.totalCount != "0")
+        //        {
+        //            DcCleanBillRecordList festdels = DcCleanBillRecordList.Fetch(new DcCleanBillRecordCriteria { DamDpaId = dpaid });
+        //            for (var fi = festdels.Count() - 1; fi >= 0; fi--)
+        //            {
+        //                festdels.RemoveAt(fi);
+        //            }
+        //            festdels.Save();//9.根据dapid 删除对应的预配舱单
+        //            DcCleanCtnList clc = DcCleanCtnList.NewList();
+        //            DcCleanBillRecord cleanBill = new DcCleanBillRecord();
+        //            for (int i = 0; i < model.GCCResult.sets.Count; i++)
+        //            {
+        //                DcCleanCtn dclcon = new DcCleanCtn();
+        //                foreach (var item in model.GCCResult.sets[i].fields)
+        //                {
+        //                    if (item.name == "CUSTOM_ID")
+        //                    {
+        //                        cleanBill.DcbrCustomId = item.value;
+        //                    }
+        //                    if (item.name == "I_E_FLAG")
+        //                    {
+        //                        cleanBill.DcbrIEFlag = item.value.ToIntNull();
+        //                    }
+        //                    if (item.name == "TRAF_MODE")
+        //                    {
+        //                        cleanBill.DcbrTrafMode = item.value.ToIntNull();
+        //                    }
+        //                    if (item.name == "P_E_FLAG")
+        //                    {
+        //                        cleanBill.DcbrPEFlag = item.value;
+        //                    }
+        //                    if (item.name == "SHIP_ID")
+        //                    {
+        //                        cleanBill.DcbrShipId = item.value;
+        //                    }
+        //                    if (item.name == "VOYAGE_NO")
+        //                    {
+        //                        cleanBill.DcbrVoyageNo = item.value;
+        //                    }
+        //                    if (item.name == "SHIP_NAME_EN")
+        //                    {
+        //                        cleanBill.DcbrShipNameEn = item.value;
+        //                    }
+        //                    if (item.name == "SHIP_NAME_CN")
+        //                    {
+        //                        cleanBill.DcbrShipNameCn = item.value;
+        //                    }
+        //                    if (item.name == "WAREHOUSE_NO")
+        //                    {
+        //                        cleanBill.DcbrWarehouseNo = item.value.ToLongNull();
+        //                    }
+        //                    if (item.name == "I_E_DATE")
+        //                    {
+        //                        cleanBill.DcbrIEDate = item.value.ToDateTimeNull();
+        //                    }
+        //                    if (item.name == "SEND_NAME")
+        //                    {
+        //                        cleanBill.DcbrSendName = item.value;
+        //                    }
+        //                    if (item.name == "SEND_CODE")
+        //                    {
+        //                        cleanBill.DcbrSendCode = item.value;
+        //                    }
+        //                    if (item.name == "SEND_DATE")
+        //                    {
+        //                        cleanBill.DcbrSendDate = item.value.ToDateTimeNull();
+        //                    }
+        //                    if (item.name == "BILL_SEQ_NO")
+        //                    {
+        //                        cleanBill.DcbrBillSeqNo = item.value;
+        //                    }
+        //                    if (item.name == "BILL_NO")
+        //                    {
+        //                        cleanBill.DcbrBillNo = item.value;
+        //                    }
+        //                    if (item.name == "LOADING_PORT")
+        //                    {
+        //                        cleanBill.DcbrLoadingPort = item.value;
+        //                    }
+        //                    if (item.name == "DISTRICT_CODE")
+        //                    {
+        //                        cleanBill.DcbrDistrictCode = item.value;
+        //                    }
+        //                    if (item.name == "UNLOAD_PLACE")
+        //                    {
+        //                        cleanBill.DcbrUnloadPlace = item.value;
+        //                    }
+        //                    if (item.name == "WRAP_TYPE")
+        //                    {
+        //                        cleanBill.DcbrWrapType = item.value.ToIntNull();
+        //                    }
+        //                    if (item.name == "VOLUME")
+        //                    {
+        //                        cleanBill.DcbrVolume = item.value;
+        //                    }
+        //                    if (item.name == "MAIN_G_NAME")
+        //                    {
+        //                        cleanBill.DcbrMainGName = item.value;
+        //                    }
+        //                    if (item.name == "PACK_NUM")
+        //                    {
+        //                        cleanBill.DcbrPackNum = item.value.ToLongNull();
+        //                    }
+        //                    if (item.name == "GROSS_WT")
+        //                    {
+        //                        cleanBill.DcbrGrossWt = item.value.ToLongNull();
+        //                    }
+        //                    if (item.name == "CHEST_NUM")
+        //                    {
+        //                        cleanBill.DcbrChestNum = item.value.ToLongNull();
+        //                    }
+        //                    if (item.name == "CONTR_NO")
+        //                    {
+        //                        cleanBill.DcbrContrNo = item.value;
+        //                    }
+        //                    if (item.name == "REC_NAME")
+        //                    {
+        //                        cleanBill.DcbrRecName = item.value;
+        //                    }
+        //                    if (item.name == "OWNER_NAME")
+        //                    {
+        //                        cleanBill.DcbrOwnerName = item.value;
+        //                    }
+        //                    if (item.name == "IMP_DATE")
+        //                    {
+        //                        cleanBill.DcbrImpDate = item.value.ToDateTimeNull();
+        //                    }
+
+        //                    dclcon.DccDcbrId = cleanBill.DcbrId;
+        //                    if (item.name == "CONTA_SEQ_NO")
+        //                    {
+        //                        dclcon.DccContaSeqNo = item.value.ToIntNull();
+        //                    }
+        //                    if (item.name == "CONTA_NO")
+        //                    {
+        //                        dclcon.DccContaNo = item.value;//.ToLongNull();
+        //                    }
+        //                    if (item.name == "CONTA_SIZE")
+        //                    {
+        //                        dclcon.DccContaSize = item.value.ToIntNull();
+        //                    }
+        //                    if (item.name == "SEAL_NO")
+        //                    {
+        //                        dclcon.DccSealNo = item.value;
+        //                    }
+        //                    if (item.name == "CONAT_TYPE")
+        //                    {
+        //                        dclcon.DccConatType = item.value.ToIntNull();
+        //                    }
+        //                }
+        //                clc.Add(dclcon);
+        //                festdels.Add(cleanBill);
+        //            }
+        //        }
+        //    public ActionResult About()
+        //    {
+        //        var id = Session.SessionID;
+        //        Session.Add("test", "ssssss");
+        //        var seTest = Session["test"];
+        //        var test = HttpRuntime.Cache.Get("test");
+        //        var cache = new System.Web.Caching.Cache();
+        //        //var test = cache.Get("test");
+        //        ViewBag.Message = "Your app description page.";
+        //        HttpContext.Cache.Insert("test2", "test2ssss");
+        //        cache.Insert("test1", "sssss");
+        //        var test1 = cache.Get("test1");
+        //        return View();
+        //    }
+
+        //    public ActionResult Contact()
+        //    {
+        //        ViewBag.Message = "Your contact page.";
+
+        //        return View();
+        //    }
+
+        //}
+        //public ActionResult GetPackInfo(string billno,string boxno)
+        //{
+        //    string resultstr = "";
+        //    if (!boxno.IsNullOrEmpty())//调用电子装箱单的单据是拼箱类型且来源是美设业务时，取主提单号和集装箱号调取接口
+        //    {
+        //        resultstr = ApiHelper.GetCstVslInfoSearch("", sDlhBoxNo);//直接按箱号查询接口数据
+        //    }
+        //    else
+        //    {
+        //        resultstr = ApiHelper.GetCstVslInfoSearch(sMDehBillNo, "");//整箱按提单号调用接口
+        //    }
+        //    CstVslInfoSearchJson cstVsl = new CstVslInfoSearchJson();//该实体类存在Model下 没放在控制器下面增加位置
+        //    JavaScriptSerializer jCstVsl = new JavaScriptSerializer();
+        //    cstVsl = ser.Deserialize<CstVslInfoSearchJson>(resultstr);
+        //    if (cstVsl != null && cstVsl.detail.Count() != 0)
+        //    {
+        //        #region 报关单集装箱对象2016-11-12
+        //        DcEpDecContainer containerModel = new DcEpDecContainer();
+        //        containerModel.DecContainerNo = sDlhBoxNo;//箱号
+        //                                                  //containerModel.DecContainerWt = set.weight.ToDouble();//重量//此处应该是箱自重，而不是接口返回重量数据，待验证
+        //        containerModel.DecDehId = dehid.Value;
+        //        string sCtnType = "";
+        //        if (cstVsl.ctntype != null)//如果接口返回的箱型不为空，则取前三位到缓存中读取翻译箱型代码并存入电子装箱单和集装箱表中对应的箱型字段
+        //        {
+        //            sCtnType = cstVsl.ctntype.Substring(0, 3);
+        //            var CodeList = _BasContCodeList.Where(a => a.BccCode95.Contains(sCtnType)).FirstOrDefault();
+        //            if (CodeList != null)
+        //            {
+        //                containerModel.DecContType = CodeList.BccContCd;//箱型翻译
+        //                                                                // containerModel.DecContainerWt = CodeList.BccContWt;//重量//此处应该是箱自重，而不是接口返回重量数据，待验证[2017-01-06取箱自重]
+        //            }
+        //        }
+        //        else//否则存入空值
+        //        {
+        //            containerModel.DecContType = cstVsl.ctntype;
+        //            containerModel.DecContainerWt = 0;
+        //        }
+        //        //规格型号
+        //        if (containerModel.DecContType != "")
+        //        {
+        //            if (Convert.ToInt32(containerModel.DecContType.Substring(0, 2)) >= 40)
+        //            {
+        //                containerModel.DecContainerModel = "2";
+        //                containerModel.DecContainerWt = 3800;
+        //            }
+        //            else
+        //            {
+        //                containerModel.DecContainerModel = "1";
+        //                containerModel.DecContainerWt = 2300;
+        //            }
+        //        }
+        //        dcEpDecContainerList.Add(containerModel);//循环添加集装箱信息
+        //        #endregion
+        //        //2.1.3.1 循环数据添加倒list中
+        //        foreach (var set in cstVsl.detail)
+        //        {
+        //            #region 电子装箱单表对象赋值
+        //            DcElectronicPacking temp = new DcElectronicPacking();
+        //            temp.DepContainerNo = set.ctnno;//箱号
+        //            if (!string.IsNullOrWhiteSpace(set.cus_time))
+        //            {
+        //                temp.DepReceiptTm = DateTime.ParseExact(set.cus_time, "yyyyMMddHHmm", System.Globalization.CultureInfo.CurrentCulture);//海关接收回执时间
+        //            }
+        //            if (!string.IsNullOrWhiteSpace(set.weight))
+        //            {
+        //                temp.DepWeight = set.weight.ToDouble();//重量
+        //            }
+        //            if (!string.IsNullOrWhiteSpace(set.package))
+        //            {
+        //                temp.DepPackNo = set.package.ToLong();//件数
+        //            }
+        //            temp.DepReceipt = set.cus_status;//海关回执   问题：返回值是1和0  分别代表什么！
+        //            temp.DepContainerTransactor = set.ctn_opr_code;//箱经营人
+        //            temp.DepDischargeBwCd = set.unloadport;//卸港代码
+        //            temp.DepBillNo = set.blno;//提单号                                              
+
+        //            temp.DepContType = containerModel.DecContType;//箱型
+        //            if (!string.IsNullOrWhiteSpace(cstVsl.csotcoDt))
+        //            {
+        //                temp.DepPacketTransmissionTm = DateTime.ParseExact(cstVsl.csotcoDt, "yyyyMMddHHmm", System.Globalization.CultureInfo.CurrentCulture);//报文发送时间
+        //            }
+        //            temp.DepArrivalPlace = cstVsl.in_addr;//进港地点
+        //            if (!string.IsNullOrWhiteSpace(cstVsl.in_date))
+        //            {
+        //                temp.DepArrivalTm = DateTime.ParseExact(cstVsl.in_date, "yyyyMMddHHmm", System.Globalization.CultureInfo.CurrentCulture);//进港时间
+        //            }
+        //            temp.DepMessageNumber = cstVsl.csotco; //报文号
+
+        //            lPackage += temp.DepPackNo;
+        //            if (temp.DepWeight.HasValue)
+        //            {
+        //                lWeight += temp.DepWeight.Value;
+        //            }
+        //            list.Add(temp);
+        //            #endregion
+        //        }
+        //        if (list.Count > 0)
+        //        {
+        //            for (int i = 0; i < list.Count; i++)
+        //            {
+        //                list[i].DepTotalPackNo = lPackage;
+        //                list[i].DepTotalWeight = lWeight;
+        //            }
+        //        }
+        //}
+        #region pdf
+        public ActionResult PDF()
+        {
+            var list = DB.MysqlDB.From<pdf>().ToList();
+            return View(list);
+            //var htmlweb = new HtmlAgilityPack.HtmlWeb();
+            //htmlweb.OverrideEncoding = Encoding.GetEncoding("utf-8");
+            //htmlweb.PreRequest = new HtmlAgilityPack.HtmlWeb.PreRequestHandler(PreRequest);
+            //var docweb = htmlweb.Load("http://www.minxue.net/55/n-102355.html");
+            //string html = "<div id='test'><span>testspan1</span><span>testspan2</span><span id='span3'>testspan3</span><div><span>testspanA1</span></div></div>";
+            //var doc = new HtmlAgilityPack.HtmlDocument();
+            //doc.LoadHtml(html);
+            //var span = doc.DocumentNode.SelectSingleNode("//div[@id='test']/span[@id='span3']");
+            //var span2 = doc.DocumentNode.SelectNodes("//div[@id='test']/span");
+            //var span3 = doc.DocumentNode.SelectNodes("./div//span");
+
+        }
+        public ActionResult PDFDtl(long id)
+        {
+            var p = DB.MysqlDB.From<pdf>().Where(x => x.Id == id).ToFirstDefault();
+            var d = DB.MysqlDB.From<pdf_dtl>().Where(x => x.id == id).ToList();
+            var model = new  PDFModel();
+            model.p = p;
+            model.dtls = d;
+            return View(model);
+        }
+        public ActionResult DelPDF(long id)
+        {
+            try
+            {
+                var p = DB.MysqlDB.From<pdf>().Where(x => x.Id == id).ToFirst();
+               var ret = DB.MysqlDB.Delete(p);
+                return Json(new { Success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Success = false, Message = ex.Message });
+            }
+        }
+        public class PDFModel
+        {
+            public PDFModel()
+            {
+                dtls = new List<pdf_dtl>();
+            }
+            public pdf p { get; set; }
+            public List<pdf_dtl> dtls { get; set; }
+        }
+        #endregion
+        bool PreRequest(HttpWebRequest request)
+        {
+            request.Headers[HttpRequestHeader.AcceptEncoding] = "gzip, deflate";
+            request.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
+            request.CookieContainer = new CookieContainer();
+            return true;
+>>>>>>> c1722096a0d0083b0dcd1b914983e83c76c848c1
         }
         public class CompanyResult
         {
@@ -1387,6 +1801,45 @@ namespace testorm.Controllers
                 }
             }
             public int age { get; set; }
+        }
+        /// <summary>
+        /// 随附单据表单上传字段
+        /// </summary>
+        public class RunBackModel
+        {
+            public string method;       //insert/upload必填
+
+            public string gotoFlag;
+            public string id;
+            public string dataStatus;
+            public string status;
+            public string groupId;
+            public string fileDigest;
+            public string signCert;
+            public string fileSign;
+            public string fileInfo;
+            public string fileInfoStr;
+            public string filePath;
+            public string signTime;
+            public string tradeFileName;
+            public string lockFlag;
+            public string tradeCode;
+            public string formatType;   //US insert必填
+            public string preEntryId;   //EDI号 insert必填
+            public string entryId;      //EDI号 insert必填
+            public string declCode;     //卡号 insert必填
+            public string declName;     //卡号绑定的操作人 insert必填
+            public string fileTypeCN;   //仅upload使用的参数
+            public string fileType;     //附件类型 00000001 insert必填
+            public string fileTypeSign; //仅upload使用的参数
+            public string customsCode;  //关区 2229 insert必填
+            public string signUnit;     //上传企业代码 3109980360 insert必填
+            public string fileName;
+            public string opNote;
+            public string edocOwnerCode;
+            public string edocOwnerName;
+            public string uploadFileName;
+            public string cookie;
         }
         public class Tools
         {

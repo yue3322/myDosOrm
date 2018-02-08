@@ -52,7 +52,6 @@
       <HintPath>dll\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -266,6 +265,9 @@
     <Compile Include="Entity\HomeMysql\liangliang.cs" />
     <Compile Include="Entity\MySql\customerview.cs" />
     <Compile Include="Entity\MySql\dc_ep_dec_head_M.cs" />
+    <Compile Include="Entity\MySql\documentsattached.cs" />
+    <Compile Include="Entity\MySql\pdf.cs" />
+    <Compile Include="Entity\MySql\pdf_dtl.cs" />
     <Compile Include="Entity\MySql\top200.cs" />
     <Compile Include="Entity\Service_Form_Head.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -511,7 +513,12 @@
     <Content Include="Views\Home\getLog.cshtml" />
     <Content Include="Views\Home\VueJs.cshtml" />
     <Content Include="Views\Home\GetCustomer.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Home\Liangliang.cshtml" />
+=======
+    <Content Include="Views\Home\PDF.cshtml" />
+    <Content Include="Views\Home\PDFDtl.cshtml" />
+>>>>>>> c1722096a0d0083b0dcd1b914983e83c76c848c1
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

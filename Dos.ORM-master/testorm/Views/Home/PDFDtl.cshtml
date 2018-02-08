@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+@model testorm.Controllers.HomeController.PDFModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PDFDtl</title>
+    @*<link type="text/css" rel="stylesheet" href="~/Content/bootstrap-3.3.7/dist/css/bootstrap.css" />*@
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.0.1/jquery.js"></script>
+    @*<script type="text/javascript" src="~/Content/bootstrap-3.3.7/dist/js/bootstrap.js"></script>*@
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 先引入 Vue -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <style>
+        li {
+            padding: 10px;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>@Model.p.Titile</h1>
+        <ul>
+            @for (int i = 0; i < Model.dtls.Count; i++)
+            {
+                <li><a href="@Model.dtls[i].File_Url">@Model.dtls[i].File_Nm</a>  <span> @Model.dtls[i].File_Size</span></li>
+            }
+        </ul>
+        <ul>
+            <li><h4>中文名:</h4>@Model.p.Ch_Nm</li>
+            <li><h4>英文名:</h4>@Model.p.En_Nm</li>
+            @*<li><h4>资源格式:</h4>@Model.p.</li>*@
+            @*<li><h4>中文名:</h4>@Model.p.Ch_Nm</li>
+            <li><h4>中文名:</h4>@Model.p.Ch_Nm</li>
+            <li><h4>中文名:</h4>@Model.p.Ch_Nm</li>
+            <li><h4>中文名:</h4>@Model.p.Ch_Nm</li>
+            <li><h4>中文名:</h4>@Model.p.Ch_Nm</li>*@
+        </ul>
+        <div style="width:1000px;">
+            @Html.Raw(Model.p.Brief_Introduction)
+        </div>
+    </div>
+</body>
+</html>
