@@ -193,6 +193,7 @@ namespace testorm.Controllers
             public static readonly DbSession AccessDB = new DbSession("AccessConn");
             public static readonly DbSession OracleNDB = new DbSession("OracleNConn");
             public static readonly DbSession ServiceAccessDB = new DbSession("ServiceAccessConn");
+            public static readonly DbSession MysqlHomeDB = new DbSession("MysqlHomeConn"); 
 
             //public static readonly DbSession cusdeclOracleDB = new DbSession("cusdeclOracleConn");
             protected string updater { get; set; }
@@ -393,14 +394,14 @@ namespace testorm.Controllers
             //testasync();
             int eddd = 0;
 
-            DB.OracleDB.RegisterSqlLogger(database_OnLog);
+            //DB.OracleDB.RegisterSqlLogger(database_OnLog);
             var exCredential = new List<string>() { "3", "4", "5", "8", "B", "" };
             //var Credential = CachePool.GetValue("DcBasSuperviseCredential" + Csla.ApplicationContext.User.Identity.Name) as DcBasSuperviseCredentialList;
-            var cusdecl1111 = DB.OracleDB.From<DC_EP_DEC_HEAD_O>().Where(x => x.DEH_ENTRY_NO == "222920170001934177").ToList();
+            //var cusdecl1111 = DB.OracleDB.From<DC_EP_DEC_HEAD_O>().Where(x => x.DEH_ENTRY_NO == "222920170001934177").ToList();
 
-            var Credential = DcBasSuperviseCredentialList.Fetch(new DcBasSuperviseCredentialCriteria { });
+            //var Credential = DcBasSuperviseCredentialList.Fetch(new DcBasSuperviseCredentialCriteria { });
             //CachePool.SetValue("DcBasSuperviseCredential" + Csla.ApplicationContext.User.Identity.Name, Credential, 36000);
-            var CredentialNm = Credential.Where(x => x.DscCd == "AB").FirstOrDefault();
+            //var CredentialNm = Credential.Where(x => x.DscCd == "AB").FirstOrDefault();
             var cache = new System.Web.Caching.Cache();
             HttpRuntime.Cache.Insert("test", "runtimessss");
             //cache.Add("test", "aaaa");
@@ -1350,304 +1351,11 @@ namespace testorm.Controllers
         {
 
         }
-        //public ActionResult getLogListIndex()
-        //{
-
-        //}
-        //public ActionResult getLog()
-        //{
-
-        //}
-        //    public ActionResult GetMainFest(string billno)
-        //    {
-        //        string resultstr = "";
-        //        resultstr = CommonApiHelper.CUSWEB_CLEAN_BILL_RECORD(uso.UsoBlNo, null, null, null, null, "E", null, null);
-        //        QeuryStringJson model = new QeuryStringJson();
-        //        JavaScriptSerializer ser = new JavaScriptSerializer();
-        //        model = ser.Deserialize<QeuryStringJson>(resultstr);
-
-        //        if (model.GCCResult.Page.totalCount != "0")
-        //        {
-        //            DcCleanBillRecordList festdels = DcCleanBillRecordList.Fetch(new DcCleanBillRecordCriteria { DamDpaId = dpaid });
-        //            for (var fi = festdels.Count() - 1; fi >= 0; fi--)
-        //            {
-        //                festdels.RemoveAt(fi);
-        //            }
-        //            festdels.Save();//9.根据dapid 删除对应的预配舱单
-        //            DcCleanCtnList clc = DcCleanCtnList.NewList();
-        //            DcCleanBillRecord cleanBill = new DcCleanBillRecord();
-        //            for (int i = 0; i < model.GCCResult.sets.Count; i++)
-        //            {
-        //                DcCleanCtn dclcon = new DcCleanCtn();
-        //                foreach (var item in model.GCCResult.sets[i].fields)
-        //                {
-        //                    if (item.name == "CUSTOM_ID")
-        //                    {
-        //                        cleanBill.DcbrCustomId = item.value;
-        //                    }
-        //                    if (item.name == "I_E_FLAG")
-        //                    {
-        //                        cleanBill.DcbrIEFlag = item.value.ToIntNull();
-        //                    }
-        //                    if (item.name == "TRAF_MODE")
-        //                    {
-        //                        cleanBill.DcbrTrafMode = item.value.ToIntNull();
-        //                    }
-        //                    if (item.name == "P_E_FLAG")
-        //                    {
-        //                        cleanBill.DcbrPEFlag = item.value;
-        //                    }
-        //                    if (item.name == "SHIP_ID")
-        //                    {
-        //                        cleanBill.DcbrShipId = item.value;
-        //                    }
-        //                    if (item.name == "VOYAGE_NO")
-        //                    {
-        //                        cleanBill.DcbrVoyageNo = item.value;
-        //                    }
-        //                    if (item.name == "SHIP_NAME_EN")
-        //                    {
-        //                        cleanBill.DcbrShipNameEn = item.value;
-        //                    }
-        //                    if (item.name == "SHIP_NAME_CN")
-        //                    {
-        //                        cleanBill.DcbrShipNameCn = item.value;
-        //                    }
-        //                    if (item.name == "WAREHOUSE_NO")
-        //                    {
-        //                        cleanBill.DcbrWarehouseNo = item.value.ToLongNull();
-        //                    }
-        //                    if (item.name == "I_E_DATE")
-        //                    {
-        //                        cleanBill.DcbrIEDate = item.value.ToDateTimeNull();
-        //                    }
-        //                    if (item.name == "SEND_NAME")
-        //                    {
-        //                        cleanBill.DcbrSendName = item.value;
-        //                    }
-        //                    if (item.name == "SEND_CODE")
-        //                    {
-        //                        cleanBill.DcbrSendCode = item.value;
-        //                    }
-        //                    if (item.name == "SEND_DATE")
-        //                    {
-        //                        cleanBill.DcbrSendDate = item.value.ToDateTimeNull();
-        //                    }
-        //                    if (item.name == "BILL_SEQ_NO")
-        //                    {
-        //                        cleanBill.DcbrBillSeqNo = item.value;
-        //                    }
-        //                    if (item.name == "BILL_NO")
-        //                    {
-        //                        cleanBill.DcbrBillNo = item.value;
-        //                    }
-        //                    if (item.name == "LOADING_PORT")
-        //                    {
-        //                        cleanBill.DcbrLoadingPort = item.value;
-        //                    }
-        //                    if (item.name == "DISTRICT_CODE")
-        //                    {
-        //                        cleanBill.DcbrDistrictCode = item.value;
-        //                    }
-        //                    if (item.name == "UNLOAD_PLACE")
-        //                    {
-        //                        cleanBill.DcbrUnloadPlace = item.value;
-        //                    }
-        //                    if (item.name == "WRAP_TYPE")
-        //                    {
-        //                        cleanBill.DcbrWrapType = item.value.ToIntNull();
-        //                    }
-        //                    if (item.name == "VOLUME")
-        //                    {
-        //                        cleanBill.DcbrVolume = item.value;
-        //                    }
-        //                    if (item.name == "MAIN_G_NAME")
-        //                    {
-        //                        cleanBill.DcbrMainGName = item.value;
-        //                    }
-        //                    if (item.name == "PACK_NUM")
-        //                    {
-        //                        cleanBill.DcbrPackNum = item.value.ToLongNull();
-        //                    }
-        //                    if (item.name == "GROSS_WT")
-        //                    {
-        //                        cleanBill.DcbrGrossWt = item.value.ToLongNull();
-        //                    }
-        //                    if (item.name == "CHEST_NUM")
-        //                    {
-        //                        cleanBill.DcbrChestNum = item.value.ToLongNull();
-        //                    }
-        //                    if (item.name == "CONTR_NO")
-        //                    {
-        //                        cleanBill.DcbrContrNo = item.value;
-        //                    }
-        //                    if (item.name == "REC_NAME")
-        //                    {
-        //                        cleanBill.DcbrRecName = item.value;
-        //                    }
-        //                    if (item.name == "OWNER_NAME")
-        //                    {
-        //                        cleanBill.DcbrOwnerName = item.value;
-        //                    }
-        //                    if (item.name == "IMP_DATE")
-        //                    {
-        //                        cleanBill.DcbrImpDate = item.value.ToDateTimeNull();
-        //                    }
-
-        //                    dclcon.DccDcbrId = cleanBill.DcbrId;
-        //                    if (item.name == "CONTA_SEQ_NO")
-        //                    {
-        //                        dclcon.DccContaSeqNo = item.value.ToIntNull();
-        //                    }
-        //                    if (item.name == "CONTA_NO")
-        //                    {
-        //                        dclcon.DccContaNo = item.value;//.ToLongNull();
-        //                    }
-        //                    if (item.name == "CONTA_SIZE")
-        //                    {
-        //                        dclcon.DccContaSize = item.value.ToIntNull();
-        //                    }
-        //                    if (item.name == "SEAL_NO")
-        //                    {
-        //                        dclcon.DccSealNo = item.value;
-        //                    }
-        //                    if (item.name == "CONAT_TYPE")
-        //                    {
-        //                        dclcon.DccConatType = item.value.ToIntNull();
-        //                    }
-        //                }
-        //                clc.Add(dclcon);
-        //                festdels.Add(cleanBill);
-        //            }
-        //        }
-        //    public ActionResult About()
-        //    {
-        //        var id = Session.SessionID;
-        //        Session.Add("test", "ssssss");
-        //        var seTest = Session["test"];
-        //        var test = HttpRuntime.Cache.Get("test");
-        //        var cache = new System.Web.Caching.Cache();
-        //        //var test = cache.Get("test");
-        //        ViewBag.Message = "Your app description page.";
-        //        HttpContext.Cache.Insert("test2", "test2ssss");
-        //        cache.Insert("test1", "sssss");
-        //        var test1 = cache.Get("test1");
-        //        return View();
-        //    }
-
-        //    public ActionResult Contact()
-        //    {
-        //        ViewBag.Message = "Your contact page.";
-
-        //        return View();
-        //    }
-
-        //}
-        //public ActionResult GetPackInfo(string billno,string boxno)
-        //{
-        //    string resultstr = "";
-        //    if (!boxno.IsNullOrEmpty())//调用电子装箱单的单据是拼箱类型且来源是美设业务时，取主提单号和集装箱号调取接口
-        //    {
-        //        resultstr = ApiHelper.GetCstVslInfoSearch("", sDlhBoxNo);//直接按箱号查询接口数据
-        //    }
-        //    else
-        //    {
-        //        resultstr = ApiHelper.GetCstVslInfoSearch(sMDehBillNo, "");//整箱按提单号调用接口
-        //    }
-        //    CstVslInfoSearchJson cstVsl = new CstVslInfoSearchJson();//该实体类存在Model下 没放在控制器下面增加位置
-        //    JavaScriptSerializer jCstVsl = new JavaScriptSerializer();
-        //    cstVsl = ser.Deserialize<CstVslInfoSearchJson>(resultstr);
-        //    if (cstVsl != null && cstVsl.detail.Count() != 0)
-        //    {
-        //        #region 报关单集装箱对象2016-11-12
-        //        DcEpDecContainer containerModel = new DcEpDecContainer();
-        //        containerModel.DecContainerNo = sDlhBoxNo;//箱号
-        //                                                  //containerModel.DecContainerWt = set.weight.ToDouble();//重量//此处应该是箱自重，而不是接口返回重量数据，待验证
-        //        containerModel.DecDehId = dehid.Value;
-        //        string sCtnType = "";
-        //        if (cstVsl.ctntype != null)//如果接口返回的箱型不为空，则取前三位到缓存中读取翻译箱型代码并存入电子装箱单和集装箱表中对应的箱型字段
-        //        {
-        //            sCtnType = cstVsl.ctntype.Substring(0, 3);
-        //            var CodeList = _BasContCodeList.Where(a => a.BccCode95.Contains(sCtnType)).FirstOrDefault();
-        //            if (CodeList != null)
-        //            {
-        //                containerModel.DecContType = CodeList.BccContCd;//箱型翻译
-        //                                                                // containerModel.DecContainerWt = CodeList.BccContWt;//重量//此处应该是箱自重，而不是接口返回重量数据，待验证[2017-01-06取箱自重]
-        //            }
-        //        }
-        //        else//否则存入空值
-        //        {
-        //            containerModel.DecContType = cstVsl.ctntype;
-        //            containerModel.DecContainerWt = 0;
-        //        }
-        //        //规格型号
-        //        if (containerModel.DecContType != "")
-        //        {
-        //            if (Convert.ToInt32(containerModel.DecContType.Substring(0, 2)) >= 40)
-        //            {
-        //                containerModel.DecContainerModel = "2";
-        //                containerModel.DecContainerWt = 3800;
-        //            }
-        //            else
-        //            {
-        //                containerModel.DecContainerModel = "1";
-        //                containerModel.DecContainerWt = 2300;
-        //            }
-        //        }
-        //        dcEpDecContainerList.Add(containerModel);//循环添加集装箱信息
-        //        #endregion
-        //        //2.1.3.1 循环数据添加倒list中
-        //        foreach (var set in cstVsl.detail)
-        //        {
-        //            #region 电子装箱单表对象赋值
-        //            DcElectronicPacking temp = new DcElectronicPacking();
-        //            temp.DepContainerNo = set.ctnno;//箱号
-        //            if (!string.IsNullOrWhiteSpace(set.cus_time))
-        //            {
-        //                temp.DepReceiptTm = DateTime.ParseExact(set.cus_time, "yyyyMMddHHmm", System.Globalization.CultureInfo.CurrentCulture);//海关接收回执时间
-        //            }
-        //            if (!string.IsNullOrWhiteSpace(set.weight))
-        //            {
-        //                temp.DepWeight = set.weight.ToDouble();//重量
-        //            }
-        //            if (!string.IsNullOrWhiteSpace(set.package))
-        //            {
-        //                temp.DepPackNo = set.package.ToLong();//件数
-        //            }
-        //            temp.DepReceipt = set.cus_status;//海关回执   问题：返回值是1和0  分别代表什么！
-        //            temp.DepContainerTransactor = set.ctn_opr_code;//箱经营人
-        //            temp.DepDischargeBwCd = set.unloadport;//卸港代码
-        //            temp.DepBillNo = set.blno;//提单号                                              
-
-        //            temp.DepContType = containerModel.DecContType;//箱型
-        //            if (!string.IsNullOrWhiteSpace(cstVsl.csotcoDt))
-        //            {
-        //                temp.DepPacketTransmissionTm = DateTime.ParseExact(cstVsl.csotcoDt, "yyyyMMddHHmm", System.Globalization.CultureInfo.CurrentCulture);//报文发送时间
-        //            }
-        //            temp.DepArrivalPlace = cstVsl.in_addr;//进港地点
-        //            if (!string.IsNullOrWhiteSpace(cstVsl.in_date))
-        //            {
-        //                temp.DepArrivalTm = DateTime.ParseExact(cstVsl.in_date, "yyyyMMddHHmm", System.Globalization.CultureInfo.CurrentCulture);//进港时间
-        //            }
-        //            temp.DepMessageNumber = cstVsl.csotco; //报文号
-
-        //            lPackage += temp.DepPackNo;
-        //            if (temp.DepWeight.HasValue)
-        //            {
-        //                lWeight += temp.DepWeight.Value;
-        //            }
-        //            list.Add(temp);
-        //            #endregion
-        //        }
-        //        if (list.Count > 0)
-        //        {
-        //            for (int i = 0; i < list.Count; i++)
-        //            {
-        //                list[i].DepTotalPackNo = lPackage;
-        //                list[i].DepTotalWeight = lWeight;
-        //            }
-        //        }
-        //}
+        public ActionResult Liangliang()
+        {
+            var llList = DB.MysqlHomeDB.From<liangliang>().Where(liangliang._.time >= "2018-01-20".ToDateTime() && liangliang._.time < "2018-01-21".ToDateTime()).ToList();
+            return View(llList);
+        }
         public class CompanyResult
         {
             public CompanyResult()

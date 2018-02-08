@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+@model List<Dos.Model.liangliang>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Liangliang</title>
+</head>
+<body>
+    <div>
+        <ul>
+            @foreach(var item in Model)
+            {
+                var url = "https://www.iqshw.com" + item.url;
+                
+            <li><a href="@url" target="_blank">@Html.Raw(item.title)</a><em>@item.time</em></li>
+            }
+        </ul>
+    </div>
+</body>
+</html>

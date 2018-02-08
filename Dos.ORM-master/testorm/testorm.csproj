@@ -263,6 +263,7 @@
     <Compile Include="Entity\DC_EP_DEC_RESULT.cs" />
     <Compile Include="Entity\Form_Head.cs" />
     <Compile Include="Entity\Form_List.cs" />
+    <Compile Include="Entity\HomeMysql\liangliang.cs" />
     <Compile Include="Entity\MySql\customerview.cs" />
     <Compile Include="Entity\MySql\dc_ep_dec_head_M.cs" />
     <Compile Include="Entity\MySql\top200.cs" />
@@ -510,6 +511,7 @@
     <Content Include="Views\Home\getLog.cshtml" />
     <Content Include="Views\Home\VueJs.cshtml" />
     <Content Include="Views\Home\GetCustomer.cshtml" />
+    <Content Include="Views\Home\Liangliang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
